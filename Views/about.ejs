@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowurCraft-Estate</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        scroll-behavior: smooth;
+        position: relative;
+    }
+
+    .first {
+        width: 100%;
+        height: 130vh;
+        background: #000;
+        color: #fff;
+        display: grid;
+        padding: 3em .7em;
+        gap: 2em;
+        grid-template-rows: 2fr 1fr;
+    }
+
+    .a {
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: .3em 1em;
+        border-radius: .4em;
+        gap: 2em;
+    }
+
+    .a p {
+        font-size: 34px;
+        text-align: justify;
+        width: 90%;
+        margin-top: 1em;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .first h1 {
+        font-size: 45px;
+        font-family: sans-serif;
+    }
+
+    .b {
+        background: #000;
+        padding: .3em 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 2.3em;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .b h1 {
+        color: #fff;
+    }
+
+    .b p {
+        color: gray;
+        font-size: 24px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    mark {
+        border-radius: 1em 2em;
+        padding: 0em .3em;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: #234;
+        background: orange;
+    }
+
+    .second {
+        width: 100%;
+        height: fit-content;
+        background: #000;
+        color: #fff;
+        padding: 1em .5em;
+    }
+
+    .second h2 {
+        color: gray;
+        font-size: 35px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .txt {
+        width: 100vw;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.3em;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .txt h1 {
+        font-size: 30px;
+        margin-top: .5em;
+        color: orange;
+    }
+
+    @media screen and (min-width:760px) {
+        .first {
+            width: 100%;
+            height: fit-content;
+            background: #000;
+            color: #fff;
+            display: grid;
+            gap: 2em;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .a p {
+            font-size: 34px;
+            text-align: justify;
+            width: 80%;
+        }
+
+        .b h1 {
+            color: #fff;
+            font-size: 60px;
+        }
+
+        .b p {
+            color: gray;
+            font-size: 24px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .txt {
+            width: 100vw;
+            padding: 1.5em 3em;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.3em;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .txt h1 {
+            font-size: 40px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .txt p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 22px;
+        }
+
+    }
+</style>
+
+<body>
+    <section class="first">
+        <div class="a" data-aos="fade-down">
+            <h1>We are <span> <mark>DEMESNE</mark> </span> </h1>
+            <p>We are a design and technology agency that builds world class products for the digital age.</p>
+        </div>
+
+        <div class="b" data-aos="fade-right">
+            <div>
+                <h1 style="color: orange;">20 +</h1>
+                <p>Years in busness</p>
+            </div>
+
+            <div>
+                <h1 style="color: orange;">250 +</h1>
+                <p>Project achieved</p>
+            </div>
+
+
+            <div>
+                <h1 style="color: orange;"> 40 +</h1>
+                <p>Awards</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="second">
+        <h2 data-aos="zoom-in">What makes us one of the top rated real estate companies</h2>
+        <hr style="height: .1px;border: none ;margin-top: 2em;width: 100%;background: gray;">
+
+        <div class="txt" data-aos="zoom-in-left">
+            <h1>Longevity</h1>
+            <p>
+                Developing long-lasting properties has been our surest reviews.In return, clients and peers will respect our authenticity.
+                We ensure your longevity by giving back to the community, allowing others to trust our integrity.
+            </p>
+            <hr style="height: .1px;border: none ;margin-top: 3em;width: 100%;background: gray;">
+        </div>
+
+        <div class="txt"  data-aos="zoom-in-left">
+            <h1>On-Brand Experiences</h1>
+            <p> Building a comprehensive brand experience means having a solid understanding that your branding goes beyond your logo. This includes elevating shopping centers or business spaces from something utilitarian to a fun, high-energy experience.</p>
+            <hr style="height: .1px;border: none ;margin-top: 3em;width: 100%;background: gray;">
+        </div>
+
+        <div class="txt"  data-aos="zoom-in-left">
+            <h1>One-Of-A-Kind Solutions</h1>
+            <p>
+                We offer a device-agnostic, comprehensive and highly configurable multiple listing service (MLS) platform featuring the most-used components that agents need day-to-day.
+            </p>
+            <hr style="height: .1px;border: none ;margin-top: 3em;width: 100%;background: gray;">
+        </div>
+
+        <div class="txt" data-aos="zoom-in-left">
+            <h1>Partnership & Collaboration</h1>
+            <p>Our Partnership helps in building up the flow of our collaborators.Flexible terms and conditions apply (T&C apply). </p>
+            <hr style="height: .1px;border: none ;margin-top: 3em;width: 100%;background: gray;">
+        </div>
+
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        AOS.init({
+            duration: 500, // values from 0 to 3000, with step 50ms
+            easing: 'ease-in', // default easing for AOS animations
+            once: false,
+            delay: 50,
+        });
+
+
+    </script>
+</body>
+
+</html>

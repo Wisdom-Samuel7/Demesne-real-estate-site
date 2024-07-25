@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowurCraft-Estate</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+DK+Uloopet:wght@100..400&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+DK+Uloopet:wght@100..400&display=swap');
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        scroll-behavior: smooth;
+        position: relative;
+        width: 100vw;
+        overflow: scroll;
+    }
+
+    nav {
+        width: 100vw;
+        padding: 15px 0;
+        background: rgba(0, 0, 0, .4);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        z-index: 200;
+    }
+
+    nav a {
+        color: #fff;
+        margin-right: 10px;
+        font-family: "Kanit", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+        position: relative;
+    }
+
+    nav a:hover {
+        color: powderblue;
+    }
+
+    nav a:hover::before {
+        position: absolute;
+        content: '';
+        height: 3px;
+        width: 100%;
+        background: khaki;
+        bottom: -5px;
+        animation: hoverEffect .2s forwards ease-in;
+    }
+
+
+    .links {
+        display: none;
+    }
+
+    nav header {
+        font-size: 25px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .hero {
+        width: 100%;
+        height: 100vh;
+        background: #234;
+        position: relative;
+    }
+
+    .hero video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+    }
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(150, 180, 15, .6);
+        mix-blend-mode: overlay;
+        z-index: 1;
+    }
+
+    .intro {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: .6em;
+        padding: 0 .6em;
+    }
+
+    .intro h1 {
+        font-size: 60px;
+        color: #fff;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 800;
+
+    }
+
+    .into h3 {
+        text-align: center;
+    }
+
+    .intro p {
+        color: gainsboro;
+        font-size: 20px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        width: 100%;
+        text-align: start;
+    }
+
+    .intro button {
+        padding: .8em 4em;
+        border-radius: .3em;
+        border: none;
+        font-weight: bolder;
+        margin-top: 1em;
+        background: none;
+        border: 1px solid #fff;
+        font-size: 16px;
+        color: #234;
+        position: relative;
+        opacity: 0;
+    }
+
+
+    .intro button:nth-child(1) {
+        background: none;
+        color: #fff;
+    }
+
+
+    .intro button:nth-child(2)::before {
+        position: absolute;
+        content: 'Contact';
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: scroll;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        background: yellow;
+        top: 0;
+        left: 0;
+        color: #236;
+        font-weight: bolder;
+        animation: hoverEffect 1s forwards .2s ease-in-out;
+    }
+
+    .intro h3 {
+        font-size: 50px;
+        color: orange;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+
+    }
+
+    .offers {
+        width: 100vw;
+        height: 100vh;
+        background: none;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .box-b {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: #236; */
+        height: 100%;
+    }
+
+    @keyframes hoverEffect {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%;
+        }
+    }
+
+    .box-a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 3em;
+        padding: 2em .3em;
+        /* background: #236; */
+    }
+
+    .box-a h1 {
+        color: #234;
+        font-size: 35px;
+    }
+
+    .box-a ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.3em;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+    }
+
+    .box-a ul li {
+        gap: 1.2em;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box-a ul li p {
+        width: 80%;
+    }
+
+    .offers-text h2 {
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        color: #224;
+    }
+
+    .offers-text p {
+        color: grey;
+        font-weight: bolder;
+    }
+
+    .services {
+        width: 100vw;
+        height: fit-content;
+        background: #224;
+        padding: 2em .5em;
+    }
+
+    .services h1 {
+        font-size: 34px;
+        padding: .6em .2em;
+        color: #fff;
+        font-family: "Kanit", sans-serif;
+        position: relative;
+        text-align: center;
+    }
+
+    /* .services h1::after {
+        position: absolute;
+        content: "";
+        width: 250px;
+        bottom: 25px;
+        left: 100px;
+        height: 2px;
+        border-radius: 1em;
+        background: powderblue;
+    } */
+
+    .services-box {
+        margin: auto;
+        width: 70%;
+        height: fit-content;
+        background: transparent;
+        padding: 3em .1em;
+        display: flex;
+        flex-direction: column;
+       /* flex-wrap: wrap; */
+        gap: 2em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box-s {
+        width: 300px;
+        height: fit-content;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: .6em;
+        justify-content: center;
+        align-items: center;
+        padding: .5em;
+        border-radius: .4rem;
+        transition: scale 1.3s;
+        box-shadow: 1px 1px 25px rgba(0, 0, 20, .23);
+    }
+
+    .box-s:hover {
+        scale: 1.08;
+    }
+
+    .img-fit {
+        width: 270px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: .5rem;
+    }
+
+    .hidden {
+        display: none;
+        transition: 1s;
+    }
+
+    .show {
+        display: block;
+        transition: 1s;
+    }
+
+    .menu-display {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 20, .89);
+        top: 0;
+        left: 0;
+        z-index: 20000;
+        mix-blend-mode: luminosity;
+    }
+
+    .portfolio {
+        width: 100vw;
+        height: fit-content;
+        padding: 2em 0;
+    }
+
+    .portfolio-box {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .box-p-a {
+        background: transparent;
+        width: 50%;
+        margin: auto;
+        height: fit-content;
+        /* padding: 1em; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+       align-items: center;
+       justify-content: center;
+    }
+
+    .box-p-a img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        box-shadow: 1px 1px 25px rgba(0, 0, 20, .63);
+    }
+
+    .box-p-b {
+        background: paleturquoise;
+    }
+
+    .portfolio h1 {
+        font-size: 40px;
+        padding: .1em 1em;
+        color: #236;
+        font-family: "Kanit", sans-serif;
+        position: relative;
+        text-align: center;
+    }
+
+    .portfolio .r-text {
+        font-size: 20px;
+        padding: .1em 1em;
+        color: gray;
+        font-family: "Kanit", sans-serif;
+        position: relative;
+        text-align: center;
+    }
+
+
+    .box-p-b main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        place-items: center;
+        padding: 1em;
+    }
+
+    footer {
+        width: 100vw;
+        height: 50vh;
+
+    }
+
+    footer {
+        width: 100vw;
+        height: 30vh;
+        background: #fff;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
+        font-weight: bolder;
+
+    }
+
+    .foot-a {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1em;
+        z-index: 4000;
+    }
+
+    .foot-a a {
+        color: #000;
+        font-weight: bold;
+        font-style: normal;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .foot-b {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1em;
+        z-index: 4000;
+    }
+
+    .foot-b a {
+        color: #000;
+        font-weight: bold;
+        font-style: normal;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .socials {
+        display: grid;
+        margin-top: 2em;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        z-index: 4000;
+    }
+
+    @media screen and (min-width:760px) {
+        .links {
+            display: flex;
+            gap: 2em;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .intro {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: .4em;
+            padding: 0 4em;
+        }
+
+        .intro h1 {
+            width: 500px;
+            text-align: start;
+        }
+
+        .intro p {
+            color: gainsboro;
+            font-size: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            width: 70%;
+            text-align: start;
+        }
+
+
+        .offers {
+            width: 100vw;
+            height: 80vh;
+            display: flex;
+
+        }
+
+        .box-a {
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+
+        .box-b {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+
+        }
+
+        .services-box {
+            width: 80%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            place-items: center;
+        }
+
+        /* .img-fit {
+            width: 400px;
+            height: 400px;
+        } */
+
+        .menu-display {
+            display: none;
+        }
+
+        .box-p-a {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .4em;
+        }
+
+        .portfolio-box {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .box-p-a {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            width: 60%;
+        }
+
+        .box-p-a img {
+            width: 320px;
+            height: 250px;
+            object-fit: cover;
+            margin: .4em;
+            box-shadow: 1px 1px 25px rgba(0, 0, 20, .63);
+        }
+
+        .box-p-b {
+            display: flex;
+
+        }
+
+        .box-p-b main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3em;
+            place-items: center;
+            padding: 1em;
+            margin: auto;
+            width: 70%;
+            height: fit-content;
+        }
+
+    }
+</style>
+
+<body>
+
+    <main class="menu-display hidden ">
+        <svg class="close" style="position: absolute;top:10px;left:10px;" xmlns="http://www.w3.org/2000/svg" width="36"
+            height="36" fill="#fff" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+        </svg>
+
+        <div
+            style="color: #fff;height: 100%;display: flex;flex-direction: column;gap: 1.4em;padding: 5em 3em;justify-content: center;align-items: self-start;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 25px;">
+
+            <!-- <a style="color: #fff; " href="" class="m-pick">Rentals</a> -->
+            <a style="color: #fff; " href="/about" class="m-pick">About Us</a>
+            <a style="color: #fff; " href="/contact" class="m-pick">Contact Us</a>
+            <!-- <a style="color: #fff; " href="" class="m-pick">Morgage</a> -->
+            <a style="color: #fff; " href="/partnership" class="m-pick">News</a>
+            <a style="color: #fff; " href="/partnership" class="m-pick">Advertise</a>
+            <a style="color: #fff; " href="/partnership" class="m-pick">Partnership<a />
+
+        </div>
+
+    </main>
+
+
+
+    <nav>
+        <header>Deme<span
+                style="color: orange;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">sne</span>
+        </header>
+
+        <div class="links">
+
+            <a style="color: #fff; " href="" class="m-pick">Home</a>
+            <a style="color: #fff; " href="/about" class="m-pick">About Us</a>
+            <a style="color: #fff; " href="" class="m-pick">Contact Us</a>
+            <!-- <a style="color: #fff; " href="" class="m-pick">Morgage</a> -->
+            <a style="color: #fff; " href="" class="m-pick">News</a>
+            <!-- <a style="color: #fff; " href="" class="m-pick">Advertise</a> -->
+            <!-- <a style="color: #fff; " href="" class="m-pick">Partnership<a /> -->
+        </div>
+
+        <div class="menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="orange" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg>
+        </div>
+    </nav>
+
+
+
+    <section class="hero">
+
+        <div class="overlay"></div>
+        <video src="/1194623_Birds Eye View_Aerial_3840x2160(1).mp4" autoplay="autoplay" loop muted>
+
+        </video>
+
+
+        <div class="intro">
+            <h1 class="a">FIND YOUR PERFECT HOME</h1>
+            <h3 class="text">Our Agent Are At Your Service</h3>
+
+            <div data-aos="fade-right" class="btn" style="display: flex;gap: 2.5em;z-index: 200000;">
+                <button class="btn-effect"><a href="#offers" style="color: #fff;cursor: pointer;">Get
+                        Started</a></button>
+                <button class="contact"></button>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="offers" class="offers">
+
+        <div class="box-a">
+            <h1 data-aos="zoom-in-right"> Available Offers</h1>
+
+            <ul>
+                <li data-aos="fade-right">
+                    <!-- IMAGE SVG -->
+                    <div>
+                        <img src="./buyer_2973997.png" alt="" srcset="">
+                    </div>
+
+                    <div class="offers-text">
+                        <h2>Home for sale</h2>
+                        <p> We sell houses in several counntries and also help in maintanance </p>
+                    </div>
+                </li>
+
+
+                <li data-aos="fade-right">
+                    <!-- IMAGE SVG -->
+                    <div>
+                        <img src="./buyer_2973997.png" alt="" srcset="">
+                    </div>
+
+                    <div class="offers-text">
+                        <h2> Property Maintenance </h2>
+                        <p>We deliver excellent property management.Hundred percent delivery </p>
+                    </div>
+                </li>
+
+
+                <li data-aos="fade-right">
+                    <!-- IMAGE SVG -->
+                    <div>
+                        <img src="./buyer_2973997.png" alt="" srcset="">
+                    </div>
+
+                    <div class="offers-text">
+                        <h2> Management </h2>
+                        <p>We offer quality property management such as Proper Management,Renovation
+                            Management,Construction Management</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- IMAGE -->
+        <div class="box-b" data-aos="zoom-in">
+            <img class="img-fit"
+                src="https://img.freepik.com/free-photo/villa-house-model-key-drawing-retro-desktop-real-estate-sale-concept_1387-312.jpg?t=st=1721482241~exp=1721485841~hmac=0a2be6f279f863d57e16f0652f3ab12b2e6cbd5b6bfaba08b01109565edf0db4&w=360"
+                alt="" srcset="">
+        </div>
+
+    </section>
+
+
+
+    <section id="services" class="services">
+
+        <div>
+            <h1 data-aos="zoom-in">Demesne<span style="color: yellow;"> Services</span></h1>
+        </div>
+
+        <div class="services-box" style="overflow: auto;">
+            <!-- FIRST -->
+            <div class="box-s" data-aos="fade-down">
+                <div class="numbers" style="position: relative;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="gray"
+                        class="bi bi-hexagon-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866z" />
+                    </svg>
+                    <p
+                        style="position: absolute;top: 10%;left: 34%;font-size: xx-large;font-weight: bolder;color: aliceblue;">
+                        1</p>
+                </div>
+                <h2 style="text-align: center;color: antiquewhite;">Property Management</h2>
+                <p
+                    style="color: gray;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-align: center;">
+                    We offer good property management to our client all over the globe.
+                    The day-to-day care and maintenance of your residential, commercial, or industrial real estate is
+                    guaranteed.
+                </p>
+            </div>
+
+            <!-- SECOND -->
+
+            <div class="box-s" data-aos="fade-up">
+                <div class="numbers" style="position: relative;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="orange"
+                        class="bi bi-hexagon-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866z" />
+                    </svg>
+                    <p
+                        style="position: absolute;top: 10%;left: 34%;font-size: xx-large;font-weight: bolder;color: aliceblue;">
+                        2</p>
+                </div>
+                <h2 style="text-align: center;color: antiquewhite;"> Renovation Management</h2>
+                <p
+                    style="color: gray;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-align: center;">
+                    Our services include hassle-free office and home renovation services. Our team consists of several
+                    experienced project managers
+                </p>
+            </div>
+
+
+            <!-- THIRD -->
+
+            <div class="box-s" data-aos="fade-down">
+                <div class="numbers" style="position: relative;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="gray"
+                        class="bi bi-hexagon-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866z" />
+                    </svg>
+                    <p
+                        style="position: absolute;top: 10%;left: 34%;font-size: xx-large;font-weight: bolder;color: aliceblue;">
+                        3</p>
+                </div>
+                <h2 style="text-align: center;color: antiquewhite;">Construction Management</h2>
+                <p
+                    style="color: gray;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-align: center;">
+                    We have quality plan management for your properties which includes budgeting, coordinating, and
+                    supervising construction projects from start to finish
+                </p>
+            </div>
+
+            <!-- FOURTH -->
+            <!-- 
+            <div class="box-s" data-aos="fade-up">
+                <div class="numbers" style="position: relative;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="orange"
+                        class="bi bi-hexagon-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866z" />
+                    </svg>
+                    <p
+                        style="position: absolute;top: 10%;left: 34%;font-size: xx-large;font-weight: bolder;color: aliceblue;">
+                        4</p>
+                </div>
+                <h2 style="text-align: center;color: antiquewhite;">Property Management</h2>
+                <p
+                    style="color: gray;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-align: center;">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe accusantium nemo magni iusto, iste
+                    hic. Aperiam doloremque rerum vel labore?</p>
+            </div> -->
+
+
+            <!-- FIFTH -->
+
+            <!-- <div class="box-s" data-aos="fade-down">
+                <div class="numbers" style="position: relative;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="gray"
+                        class="bi bi-hexagon-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866z" />
+                    </svg>
+                    <p
+                        style="position: absolute;top: 10%;left: 34%;font-size: xx-large;font-weight: bolder;color: aliceblue;">
+                        5</p>
+                </div>
+                <h2 style="text-align: center;color: antiquewhite;">Property Management</h2>
+                <p
+                    style="color: gray;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-align: center;">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe accusantium nemo magni iusto, iste
+                    hic. Aperiam doloremque rerum vel labore?</p>
+            </div> -->
+
+
+            <!-- SIXTH -->
+
+            <!-- <div class="box-s" data-aos="fade-up">
+                <div class="numbers" style="position: relative;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="orange"
+                        class="bi bi-hexagon-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.5.134a1 1 0 0 0-1 0l-6 3.577a1 1 0 0 0-.5.866v6.846a1 1 0 0 0 .5.866l6 3.577a1 1 0 0 0 1 0l6-3.577a1 1 0 0 0 .5-.866V4.577a1 1 0 0 0-.5-.866z" />
+                    </svg>
+                    <p
+                        style="position: absolute;top: 10%;left: 34%;font-size: xx-large;font-weight: bolder;color: aliceblue;">
+                        6</p>
+                </div>
+                <h2 style="text-align: center;color: antiquewhite;">Property Management</h2>
+                <p
+                    style="color: gray;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-align: center;">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe accusantium nemo magni iusto, iste
+                    hic. Aperiam doloremque rerum vel labore?</p>
+            </div> -->
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+
+        <div class="">
+            <h1 data-aos="fade-down">Companies <span style="color: orange;">Portfolio</span></h1>
+            <p data-aos="zoom-in" class="r-text">
+               Get a collection of our financial investments like stocks, bonds, commodities, project, and cash equivalents,
+            </p>
+        </div>
+
+        <div class="portfolio-box">
+            <div class="box-p-a">
+                <img data-aos="fade-down"
+                    src="https://img.freepik.com/free-photo/modern-residential-district-with-green-roof-balcony-generated-by-ai_188544-10276.jpg?t=st=1721526647~exp=1721530247~hmac=d123be74c4e8843b76cdd3f94e4a7849cce67c49f2b111fe94f449bb50a7a98c&w=740"
+                    alt="" srcset="">
+                <img data-aos="fade-left"
+                    src="https://img.freepik.com/free-photo/analog-landscape-city-with-buildings_23-2149661456.jpg?t=st=1721526659~exp=1721530259~hmac=0cca6595c89e07bbce8d640a3d548c7ca91629fa35c6fe9ab0a5279fa6a7fc82&w=740"
+                    alt="" srcset="">
+                <img data-aos="fade-up"
+                    src="https://img.freepik.com/free-photo/movie-night-by-pool-whole-family_1268-31098.jpg?t=st=1721526684~exp=1721530284~hmac=85ccf8a099ef95da485737b1a49cdd2a343e782d22a3842d27af93e98f22e443&w=740"
+                    alt="" srcset="">
+                <img data-aos="fade-right"
+                    src="https://img.freepik.com/free-photo/modern-country-houses-construction_1385-14.jpg?t=st=1721526778~exp=1721530378~hmac=a31016b3b44ccd13d20c5e0951a07bee4aac51f5f0347c04fc66a479e21c9fe8&w=740"
+                    alt="" srcset="">
+            </div>
+
+            <div class="box-p-b">
+
+                <main>
+                    <div>
+                        <h2
+                            style="margin-bottom: .4em;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 28px;">
+                            MD-QUATERS</h2>
+                        <p style="text-align: justify;font-family: sans-serif;color: #234;">
+                            We built this property located in Banana Island.A 10 story duplex with hangar for aircrafts
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2
+                            style="margin-bottom: .4em;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 28px;">
+                            STATION-PORT</h2>
+                        <p style="text-align: justify;font-family: sans-serif;color: #234;">
+                            Station port is a Travel agency located in Canada. We managed the project from start to
+                            finish with quality
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2
+                            style="margin-bottom: .4em;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 28px;">
+                            KITREX COURT</h2>
+                        <p style="text-align: justify;font-family: sans-serif;color: #234;">
+                            KITREX COURT located in Washinton DC was constrcted by the Demesne construction company .
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2
+                            style="margin-bottom: .4em;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 28px;">
+                            LAVANDAR ESTATE</h2>
+                        <p style="text-align: justify;font-family: sans-serif;color: #234;">
+                            This is an extraordinary estate managed by DEMESNE team . It has quality security
+                            personels,stable electricity
+                        </p>
+                    </div>
+                </main>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 
+    <section class="analysis">
+       
+    </section> -->
+
+    <footer>
+        <div class="foot-a">
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <!-- <a href="/news">News</a> -->
+            <a href="#services">Services</a>
+            <a href="/">Home</a>
+        </div>
+
+        <div class="foot-b">
+            <a href="/partnership">Partnership</a>
+            <a href="#offers">Offers</a>
+            <!-- <a href="">Morgage</a> -->
+            <a href="#portfolio">Company Portfolio</a>
+            <a href="mailto:knowurcrafts@gmail.com">Contact Developer</a>
+        </div>
+
+        <div class="socials">
+            <!-- <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="navy" class="bi bi-facebook"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                </svg>
+            </a>
+
+            <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="red" class="bi bi-instagram"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                </svg>
+            </a> -->
+
+            <a href="https://www.linkedin.com/in/knowurcraft-wisdom-samuel-775832239/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="blue" class="bi bi-linkedin"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                </svg>
+            </a>
+
+            <a href="https://wa.me/+2349043510600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="green" class="bi bi-whatsapp"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script>
+
+        AOS.init({
+            duration: 600, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: false,
+            delay: 70,
+        });
+
+        gsap.registerPlugin(ScrollTrigger)
+
+
+        gsap.to(".a,h3,button", 1, {
+
+            scale: .8,
+            delay: 5,
+            scrollTrigger: {
+                start: "center 50%",
+                end: "+=100",
+                scrub: true,
+                pin: true,
+                trigger: ".hero"
+
+            }
+        })
+
+
+        gsap.to(".a", .4, {
+            y: 30,
+            delay: .1,
+            opacity: 1,
+            duration: 60,
+        })
+
+        gsap.to("h3", .8, {
+            y: 35,
+            delay: .2,
+            opacity: 1,
+            duration: 60,
+        })
+
+        gsap.to("button", 1.2, {
+            y: 20,
+            // scale:0,
+            opacity: 1,
+            duration: 60,
+        })
+
+        const menu = document.querySelector(".menu")
+        const menuDisplay = document.querySelector(".menu-display")
+
+        menu.onclick = () => {
+
+            menuDisplay.classList.toggle("show")
+        }
+
+        const menuClose = document.querySelector(".close")
+        menuClose.onclick = () => {
+            menuDisplay.classList.toggle("show")
+        }
+
+        document.querySelector(".contact").onclick = () => {
+            window.location.href = "contact"
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowurCraft-Estate</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        scroll-behavior: smooth;
+        position: relative;
+        background-color: black;
+    }
+
+    nav {
+        width: 100vw;
+        padding: 15px 0;
+        background: rgba(0, 0, 0, .4);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        z-index: 200;
+    }
+
+    nav a {
+        color: #fff;
+        margin-right: 10px;
+        font-family: "Kanit", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+        position: relative;
+    }
+
+    nav a:hover {
+        color: powderblue;
+    }
+
+    nav a:hover::before {
+        position: absolute;
+        content: '';
+        height: 3px;
+        width: 100%;
+        background: khaki;
+        bottom: -5px;
+        animation: hoverEffect .2s forwards ease-in;
+    }
+
+
+    .links {
+        display: none;
+    }
+
+    nav header {
+        font-size: 25px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .first {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .a {
+        /* background: rebeccapurple; */
+        height: 100%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 6em 4em;
+
+    }
+
+    .a h1 {
+        font-size: 38px;
+        font-family: "Poppins", sans-serif;
+        margin-bottom: .5em;
+    }
+
+    .a p {
+        font-size: 18px;
+        font-family: "Poppins", sans-serif;
+        color: lightslategray;
+    }
+
+    .b {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .b img {
+        width: 60%;
+        height: 90%;
+        object-fit: cover;
+        border-radius: .5em;
+    }
+
+    .sec {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        color: #fff;
+        padding: 7em 0em;
+    }
+
+    .sec h1 {
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .media {
+        width: 100vw;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding: 4em .2em;
+        gap: 2em;
+    }
+
+    .items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .1em;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .items h2 {
+        color: orange;
+        font-size: 25px;
+
+    }
+
+    .items p {
+        color: darkgray;
+    }
+
+
+    footer{
+        width: 100vw;
+        height: 50vh;
+
+    }
+
+    footer {
+        width: 100vw;
+        height: 30vh;
+        background: #fff;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        place-items: center;
+        font-weight: bolder;
+     
+    }
+
+    .foot-a { 
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1em;
+        z-index: 4000;
+    }
+
+    .foot-a a {
+        color: #000;
+        font-weight: bold;
+        font-style: normal;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .foot-b {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1em;
+        z-index: 4000;
+    }
+
+    .foot-b a {
+        color: #000;
+        font-weight: bold;
+        font-style: normal;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .socials {
+        display: grid;
+        margin-top: 2em;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        z-index: 4000;
+    }
+
+    @media screen and (min-width:760px) {
+        .first {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .b {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 6em 1em;
+        }
+
+        .b img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: .5em;
+            rotate: 3deg;
+        }
+
+        .sec {
+            width: 100vw;
+            height: 50vh;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            color: #fff;
+            padding: 0em 0em;
+        }
+
+        .media {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8em;
+        }
+
+        .sec h1 {
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+            font-size: 28px;
+            padding: 0 5em;
+        }
+    }
+</style>
+
+<body>
+
+    <nav>
+        <header data-aos="fade-down">Deme<span
+                style="color: orange;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">sne</span>
+        </header>
+
+        <div class="links">
+
+            <a style="color: #fff; " href="" class="m-pick">Rentals</a>
+            <a style="color: #fff; " href="/about" class="m-pick">About Us</a>
+            <a style="color: #fff; " href="" class="m-pick">Contact Us</a>
+            <!-- <a style="color: #fff; " href="" class="m-pick">Morgage</a> -->
+            <a style="color: #fff; " href="" class="m-pick">News</a>
+            <!-- <a style="color: #fff; " href="" class="m-pick">Advertise</a> -->
+            <!-- <a style="color: #fff; " href="" class="m-pick">Partnership<a /> -->
+        </div>
+
+        <div class="menu">
+
+        </div>
+    </nav>
+
+
+    <div class="first">
+        <div class="a">
+            <h1 data-aos="fade-right"> CONTACT US FOR MORE </h1>
+            <p data-aos="fade-up"  data-aos-easing="ease-in-sine"  data-aos-duration="800">
+                We are here to help and answer any question you might have .We look forward to hearing from you!.
+                We will help you find the right product and pricing for you business
+            </p>
+
+        </div>
+
+        <div class="b">
+            <img data-aos-easing="linear" data-aos-duration="1000" data-aos="fade-left" src="https://img.freepik.com/free-photo/side-view-man-working-as-real-estate-agent_23-2151064991.jpg?t=st=1721801020~exp=1721804620~hmac=cbdca71a835f00c310a6f0a693f37c2dd471860a9807d39d59d26ae9eb141580&w=740"
+                alt="" srcset="">
+        </div>
+    </div>
+
+
+    <section class="sec">
+        <h1 data-aos="zoom-in"  data-aos-easing="linear" data-aos-duration="1000" style="text-transform: capitalize;">Get in touch with us directly or leave a message below ,and we will get
+            back to you ASAP </h1>
+
+        <div class="media" data-aos-easing="linear" data-aos-duration="8500" >
+
+            <div class="items" data-aos-easing="linear" data-aos-duration="8500" data-aos="flip-up">
+                <h2>Phone Number</h2>
+                <p>+2349043510600</p>
+                <p>+2347078554337</p>
+            </div>
+
+            <div class="items" data-aos-easing="linear" data-aos-duration="8500" data-aos="flip-up">
+                <h2>Email</h2>
+                <p>knowurcrafts@gmail.com</p>
+                <p>wisdsam943@gmail.com</p>
+            </div>
+
+
+            <div class="items" data-aos-easing="linear" data-aos-duration="8500" data-aos="flip-up" >
+                <h2>Socials</h2>
+
+                <!-- <p>
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="blue"
+                            class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                        </svg>
+                    </a>
+                </p> -->
+
+
+                <p>
+                    <a href="https://www.linkedin.com/in/knowurcraft-wisdom-samuel-775832239/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="blue"
+                            class="bi bi-linkedin" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                        </svg>
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="foot-a">
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <!-- <a href="/news">News</a> -->
+            <!-- <a href="#services">Services</a> -->
+            <a href="/">Home</a>
+
+        </div>
+
+        <div class="foot-b">
+            <a href="/partnership">Partnership</a>
+            <a href="/">Offers</a>
+            <!-- <a href="">Morgage</a> -->
+            <!-- <a href="#portfolio">Company Portfolio</a> -->
+            <a href="mailto:knowurcrafts@gmail.com">Contact Developer</a>
+        </div>
+
+        <div class="socials">
+            <!-- <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="navy" class="bi bi-facebook"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                </svg>
+            </a>
+
+            <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="red" class="bi bi-instagram"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                </svg>
+            </a> -->
+
+            <a href="https://www.linkedin.com/in/knowurcraft-wisdom-samuel-775832239/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="blue" class="bi bi-linkedin"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                </svg>
+            </a>
+
+            <a href="https://wa.me/+2349043510600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="green" class="bi bi-whatsapp"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script>
+        AOS.init({
+            duration: 600, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: false,
+            delay: 70,
+        });
+
+    </script>
+</body>
+
+</html>
